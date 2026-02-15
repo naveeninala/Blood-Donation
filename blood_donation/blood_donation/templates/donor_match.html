@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Matching Donors for {{ blood_group }} in {{ city }}</h2>
+
+{% if donors %}
+<table class="table table-bordered mt-3">
+    <thead class="table-danger">
+        <tr>
+            <th>Name</th><th>Email</th><th>Phone</th><th>City</th><th>Blood Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in donors %}
+        <tr>
+            <td>{{ d['name'] }}</td>
+            <td>{{ d['email'] }}</td>
+            <td>{{ d['phone'] }}</td>
+            <td>{{ d['city'] }}</td>
+            <td>{{ d['blood_group'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No donors found matching this criteria.</p>
+{% endif %}
+{% endblock %}

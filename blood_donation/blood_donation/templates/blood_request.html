@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Request Blood</h2>
+<form method="POST" class="w-50 mx-auto">
+    <div class="mb-3">
+        <label>Blood Group Needed</label>
+        <input type="text" name="blood_group" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>City</label>
+        <input type="text" name="city" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Reason</label>
+        <textarea name="reason" class="form-control" rows="3" required></textarea>
+    </div>
+    <button class="btn btn-danger">Submit Request</button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>My Blood Requests</h2>
+
+{% if requests %}
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Blood Group</th><th>City</th><th>Phone</th><th>Reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for req in requests %}
+        <tr>
+            <td>{{ req['blood_group'] }}</td>
+            <td>{{ req['city'] }}</td>
+            <td>{{ req['phone'] }}</td>
+            <td>{{ req['reason'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You have not made any blood requests yet.</p>
+{% endif %}
+{% endblock %}
